@@ -16,7 +16,7 @@ logButton.addEventListener("click", function() {
 // Record data functionality
 var weeks = [];
 var retrievedHistory = []; // Retrieve history from previous sessions
-if (localStorage.getItem("logHistory") !== "") {
+if (localStorage.getItem("logHistory")) {
     var historyArray = JSON.parse(localStorage.getItem("logHistory"));
 }
 if (typeof historyArray === "object" && historyArray.length > 0) {
