@@ -15,6 +15,15 @@ logButton.addEventListener("click", function() {
 
 // Record data functionality
 var weeks = [];
+var retrievedHistory = JSON.parse(localStorage.getItem("logHistory")); //Retrieve log history
+pushHistory(retrievedHistory);
+function pushHistory (objArray) {
+  for (var i = 0, len = objArray.length; i < len; i++) {
+    if (weeks.indexOf(objArray[i] < 0)) {
+      weeks.push(objArray[i]);
+    }
+  }
+}
 var submitWeek = document.getElementById("submitWeek");
 submitWeek.addEventListener("click", function() { //Submission event
     var week = {
@@ -237,4 +246,11 @@ formButton.addEventListener("click", function() {
     timeLogAll.innerHTML = "";
     logButton.disabled = !logButton.disabled;
     formButton.disabled = true;
+}, false);
+
+//Save log history
+var saveLog = document.getElementById("saveLog");
+saveLog.addEventListener("click", function () {
+    var logHistory = JSON.stringify(weeks);
+    localStorage.setItem("logHistory", logHistory);
 }, false);
