@@ -1,0 +1,157 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Fira Sans', sans-serif;
+  color: #253F47;
+  font-size: 18px;
+  line-height: 1.25em;
+}
+body {
+  background: repeating-linear-gradient(
+    to right,
+    #82eded,
+    #82eded 10px,
+    #39dbdb 10px,
+    #39dbdb 20px
+  );
+}
+h1 {
+  color: white;
+  font-family: 'Leckerli One', cursive;
+  font-size: 60px;
+  text-align: center;
+}
+h4 {
+  color: white;
+}
+.buttonTab {
+  border: none;
+  color: white;
+  padding: 24px 80px;
+  text-align: center;
+  text-decoration: none;
+  display:inline-block;
+  font-size: 24px;
+  border-radius: 12px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.buttonTab:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+}
+#formButton {
+  background-color: #f44336;
+}
+#logButton {
+  background-color: #008CBA;
+}
+#flexForm {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -ms-align-items: center;
+  align-items: center;
+}
+#timeLog {
+  display: none;
+}
+#flexLog {
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: nowrap;
+  -ms-align-items: center;
+  align-items: center;
+
+}
+.day {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 30px;
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
+}
+.weekComponents {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 30px;
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
+}
+.weekSummaryComponent {
+  flex-grow: 1;
+  margin: 30px;
+}
+.week {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 30px;
+}
+#weekSummary {
+  background-color: black;
+  color: white;
+}
+#weekEntries {
+  background-color: white;
+}
+
+.detailedDayEntry {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 13px;
+  width: 215px;
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
+}
+.blue-background {
+  background-color: #558de8;
+}
+.red-background {
+  background-color: #cc0906;
+}
+.green-background {
+  background-color: #30cc06;
+}
+.purple-background {
+  background-color: #e855d2;
+}
+.orange-background {
+  background-color: #cc8606;
+}
+.gray-background {
+  background-color: #a09f9d
+}
+.yellow-background {
+  background-color: #e0e806
+}
+
+@media screen and (min-width: 1272px) {
+  .weekComponents {
+    width: 1194px;
+  }
+}
+
+@media screen and (min-width: 1057px) and (max-width: 1271px){
+  .weekComponents {
+    width: 979px;
+  }
+}
+
+@media screen and (min-width: 842px) and (max-width: 1056px) {
+  .weekComponents {
+    width: 764px;
+  }
+}
+
+@media screen and (min-width: 627px) and (max-width: 841px) {
+  .weekComponents {
+    width: 549px;
+  }
+}
