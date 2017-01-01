@@ -15,14 +15,29 @@ logButton.addEventListener("click", function() {
 
 // Record data functionality
 var weeks = [];
-var retrievedHistory = JSON.parse(localStorage.getItem("logHistory")); //Retrieve log history
-pushHistory(retrievedHistory);
-function pushHistory (objArray) {
-  for (var i = 0, len = objArray.length; i < len; i++) {
-    if (weeks.indexOf(objArray[i] < 0)) {
-      weeks.push(objArray[i]);
+var retrievedHistory = []; // Retrieve history from previous sessions
+if (localStorage.getItem("logHistory") !== "") {
+    var historyArray = JSON.parse(localStorage.getItem("logHistory"));
+}
+if (typeof historyArray === "object" && historyArray.length > 0) {
+    pushToRetrieved(historyArray);
+}
+
+function pushToRetrieved(array) {
+    for (var i = 0, len = array.length; i < len; i++) {
+        retrievedHistory.push(array[i]);
     }
-  }
+}
+if (retrievedHistory.length > 0) {
+    pushHistory(retrievedHistory);
+}
+
+function pushHistory(objArray) {
+    for (var i = 0, len = objArray.length; i < len; i++) {
+        if (weeks.indexOf(objArray[i] < 0)) {
+            weeks.push(objArray[i]);
+        }
+    }
 }
 var submitWeek = document.getElementById("submitWeek");
 submitWeek.addEventListener("click", function() { //Submission event
@@ -250,7 +265,13 @@ formButton.addEventListener("click", function() {
 
 //Save log history
 var saveLog = document.getElementById("saveLog");
-saveLog.addEventListener("click", function () {
+saveLog.addEventListener("click", function() {
     var logHistory = JSON.stringify(weeks);
     localStorage.setItem("logHistory", logHistory);
+}, false);
+//Clear log history
+var clearHistory = document.getElementById("clearHistory");
+clearHistory.addEventListener("click", function() {
+    localStorage.setItem("logHistory", "");
+    location.reload();
 }, false);
