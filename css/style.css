@@ -7,16 +7,11 @@
   line-height: 1.25em;
 }
 body {
-  background: repeating-linear-gradient(
-    to right,
-    #82eded,
-    #82eded 10px,
-    #39dbdb 10px,
-    #39dbdb 20px
-  );
+  background-color: #eff3f9;
+
 }
 h1 {
-  color: white;
+  color: black;
   font-family: 'Leckerli One', cursive;
   font-size: 60px;
   text-align: center;
@@ -27,6 +22,8 @@ h4 {
 .buttonTab {
   border: none;
   color: white;
+  width: 500px;
+  max-width: 100%;
   padding: 24px 80px;
   text-align: center;
   text-decoration: none;
