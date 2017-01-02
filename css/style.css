@@ -22,9 +22,7 @@ h4 {
 .buttonTab {
   border: none;
   color: white;
-  width: 500px;
-  max-width: 100%;
-  padding: 24px 80px;
+  padding: 24px 40px;
   text-align: center;
   text-decoration: none;
   display:inline-block;
@@ -150,5 +148,23 @@ h4 {
 @media screen and (min-width: 627px) and (max-width: 841px) {
   .weekComponents {
     width: 549px;
+  }
+}
+
+@media screen and (min-width: 1021px) {
+  .buttonTab {
+    width: 500px;
+  }
+}
+
+@media screen and (min-width: 621px) and (max-width: 1020px) {
+  .buttonTab {
+      width: 300px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .buttonTab {
+      width: 150px;
   }
 }
